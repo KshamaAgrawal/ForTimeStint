@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'home.dart';
 
 class LoginPage extends StatefulWidget {
 
@@ -14,13 +15,23 @@ class _State extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
    return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
+      body: Center(
         child: ListView(
           children: <Widget>[
+      //       Container(
+ 			  // decoration: BoxDecoration(
+      //       	image: DecorationImage(
+      //       	  image: NetworkImage("assets/images/TS-long-logo-400.png"),
+      //     		  fit: BoxFit.cover)
+      //         ),
+      //         // child: new Text('Login To Your Account', style: TextStyle(fontSize: 22),)
+      //       ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 25.0),
-              child: new Text('Login To Your Account', style: TextStyle(fontSize: 22,),)
+              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 100.0),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+              child: new Text('Login To Your Account', style: TextStyle(fontSize: 22),)
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
@@ -28,6 +39,7 @@ class _State extends State<LoginPage> {
                 controller: nameController,
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
+
                   border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
                     // borderSide: BorderSide(color: Colors.white, width: 3.0),
@@ -58,7 +70,15 @@ class _State extends State<LoginPage> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(32.0),
                 ),
-                child: Text('Sign In',style: TextStyle(color: Colors.white,fontSize: 32,),),
+                child: Text('Sign In',style: TextStyle(color: Colors.white,fontSize: 32),),
+                onPressed: () {  
+                  Navigator.push(  
+                    context,  
+                    MaterialPageRoute(builder: (context) => homePage()), 
+                    // print(nameController.text, passwordController.text);
+               
+                  );  
+                },
               ),
             ),
           ],
