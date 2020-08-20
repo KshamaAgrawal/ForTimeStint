@@ -18,44 +18,41 @@ class _State extends State<LoginPage> {
       body: Center(
         child: ListView(
           children: <Widget>[
-      //       Container(
- 			  // decoration: BoxDecoration(
-      //       	image: DecorationImage(
-      //       	  image: NetworkImage("assets/images/TS-long-logo-400.png"),
-      //     		  fit: BoxFit.cover)
-      //         ),
-      //         // child: new Text('Login To Your Account', style: TextStyle(fontSize: 22),)
-      //       ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 30.0),),
+              Image.asset('assets/images/TS-long-logo-400.png',width: 50, height: 80),
+              // Image(image: ResizeImage(width: 50, height: 100)),
+
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 100.0),
+              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 70.0),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+              padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 0.0),
               child: new Text('Login To Your Account', style: TextStyle(fontSize: 22),)
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
               child: TextField(
                 controller: nameController,
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
 
                   border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(35.0)),
                     // borderSide: BorderSide(color: Colors.white, width: 3.0),
                     labelText: 'Email',
                 ),
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
               child: TextField(
                 obscureText: true,
                 controller: passwordController,
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
                   border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(35.0)),
                     // borderSide: BorderSide(color: Colors.white, width: 3.0),
                     labelText: 'Password',
                 ),
@@ -64,23 +61,23 @@ class _State extends State<LoginPage> {
             Container(
               width: 180.0,
               height: 80.0,
-              padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 10.0),
+              padding: EdgeInsets.symmetric(horizontal: 60.0, vertical: 10.0),
               child: RaisedButton(
                 color: Colors.blue, 
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(32.0),
+                  borderRadius: BorderRadius.circular(35.0),
                 ),
                 child: Text('Sign In',style: TextStyle(color: Colors.white,fontSize: 32),),
                 onPressed: () {  
                   Navigator.push(  
                     context,  
                     MaterialPageRoute(builder: (context) => homePage()), 
-                    // print(nameController.text, passwordController.text);
+                    
                
                   );  
                 },
               ),
-            ),
+            ), 	
           ],
         )
       )
