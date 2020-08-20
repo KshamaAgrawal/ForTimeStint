@@ -22,19 +22,18 @@ class _State extends State<LoginPage> {
         child: ListView(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 30.0),),
+              padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 35.0),),
               Image.asset('assets/images/TS-long-logo-400.png',width: 50, height: 80),
-              // Image(image: ResizeImage(width: 50, height: 100)),
-
+            
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 70.0),
+              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 25.0),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 0.0),
-              child: new Text('Login To Your Account', style: TextStyle(fontSize: 22),)
+              padding: EdgeInsets.symmetric(horizontal: 90.0, vertical: 0.0),
+              child: new Text('Login To Your Account', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),)
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: 55.0, vertical: 20.0),
               child: TextField(
                 controller: nameController,
                 decoration: InputDecoration(
@@ -48,7 +47,7 @@ class _State extends State<LoginPage> {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: 55.0, vertical: 10.0),
               child: TextField(
                 obscureText: true,
                 controller: passwordController,
@@ -63,14 +62,14 @@ class _State extends State<LoginPage> {
             ),
             Container(
               width: 180.0,
-              height: 80.0,
-              padding: EdgeInsets.symmetric(horizontal: 60.0, vertical: 10.0),
+              height: 70.0,
+              padding: EdgeInsets.symmetric(horizontal: 100.0, vertical: 10.0),
               child: RaisedButton(
                 color: Colors.blue, 
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(35.0),
                 ),
-                child: Text('Sign In',style: TextStyle(color: Colors.white,fontSize: 32),),
+                child: Text('Sign In',style: TextStyle(color: Colors.white,fontSize: 22),),
                 onPressed: () {   
                   if(nameController.text == Username || passwordController.text == Password){
                     Navigator.push(  

@@ -25,11 +25,12 @@ class homePage extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Center(child: Text('2', style: TextStyle(color: Colors.white, fontSize: 25),)
-                // ('HRS',style: TextStyle(color: Colors.white, fontSize: 15),),
-
-                           ), 
+              child: Center(child: Text('2:43:30', style: TextStyle(color: Colors.white, fontSize: 70),)),
             ),
+            // Container(
+            //  padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+            //  child: Text('1', style: TextStyle(fontSize: 15),), 
+            // ),  
           ],
         )
       ),
