@@ -11,6 +11,9 @@ class LoginPage extends StatefulWidget {
 class _State extends State<LoginPage> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+  var Username = "admin";
+  var Password = "admin1";
   
   @override
   Widget build(BuildContext context) {
@@ -68,15 +71,29 @@ class _State extends State<LoginPage> {
                   borderRadius: BorderRadius.circular(35.0),
                 ),
                 child: Text('Sign In',style: TextStyle(color: Colors.white,fontSize: 32),),
-                onPressed: () {  
-                  Navigator.push(  
-                    context,  
-                    MaterialPageRoute(builder: (context) => homePage()), 
-                    
-               
-                  );  
+                onPressed: () {   
+                  if(nameController.text == Username || passwordController.text == Password){
+                    Navigator.push(  
+                      context,  
+                      MaterialPageRoute(builder: (context) => homePage()),  
+                    );
+                  }
+                  else{
+                    AlertDialog alert = AlertDialog(  
+                      title: Text("Simple Alert"),  
+                      content: Text("Invalid UserName and Password", style: TextStyle(color: Colors.red),),    
+                    ); 
+                    showDialog(  
+                      context: context,  
+                      builder: (BuildContext context) {  
+                        return alert;  
+                      },  
+                    );  
+                  }
+                  print(nameController.text);
+                  print(passwordController.text);
                 },
-              ),
+              ),  
             ), 	
           ],
         )
