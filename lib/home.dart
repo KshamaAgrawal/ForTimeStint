@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';  
 import 'dart:async';
 import 'login_screen.dart';
+import 'dashboard.dart';
 
 class homePage extends StatefulWidget {
 
@@ -239,8 +240,87 @@ class _State extends State<homePage> {
         //     ),
         //   ],
         // ),
-      ]),
-      drawer: Drawer(),
+      ],
+    ),
+      drawer: Drawer(
+
+        child: ListView( 
+          // padding: EdgeInsets.zero,  
+          children: <Widget>[
+            new UserAccountsDrawerHeader( 
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
+              accountName: new Text("Tom Curise", style: TextStyle(color: Colors.black),),
+              accountEmail: new Text("Senior Developer", style: TextStyle(color: Colors.blue),),
+              currentAccountPicture: new GestureDetector(
+                child: new CircleAvatar(
+                  // backgroundColor: Colors.white,
+                  backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
+                ),
+              ),
+            ),    
+            new Divider(),  
+            ListTile(  
+              title: Text('Timer', style: TextStyle(color: Colors.black),),  
+              onTap: () {  
+              //   Navigator.push(  
+              //     context,  
+              //     MaterialPageRoute(builder: (context) => page1Page()),  
+              //   );  
+              },  
+            ),
+            ListTile(  
+              title: Text('Dashboard'),
+              // color: Colors.blue,  
+              onTap: () {  
+                Navigator.push(  
+                  context,  
+                  MaterialPageRoute(builder: (context) => dashboardPage()),  
+                );  
+              },  
+            ),
+            ListTile(  
+              title: Text('Report', style: TextStyle(color: Colors.black),),  
+              onTap: () {  
+              //   Navigator.push(  
+              //     context,  
+              //     MaterialPageRoute(builder: (context) => page1Page()),  
+              //   );  
+              },  
+            ),
+              ListTile(  
+              title: Text('Timesheets', style: TextStyle(color: Colors.black),), 
+              onTap: () {  
+              //   Navigator.push(  
+              //     context,  
+              //     MaterialPageRoute(builder: (context) => page1Page()),  
+              //   );  
+              },  
+            ),
+            ListTile(  
+              title: Text('Screenshots', style: TextStyle(color: Colors.black),), 
+              onTap: () {  
+              //   Navigator.push(  
+              //     context,  
+              //     MaterialPageRoute(builder: (context) => page1Page()),  
+              //   );  
+              },  
+            ),
+            
+            new Divider(), 
+            ListTile(  
+              title: Text('LogOut'),
+              onTap: () {  
+                Navigator.push(  
+                  context,  
+                  MaterialPageRoute(builder: (context) => LoginPage()),  
+                );  
+              },  
+            ), 
+          ],  
+        ),  
+      ),
     );
   }
 }
