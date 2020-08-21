@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'login_screen.dart';
 import 'dashboard.dart';
+import 'screenshots.dart';
 
 class homePage extends StatefulWidget {
 
@@ -301,10 +302,10 @@ class _State extends State<homePage> {
             ListTile(  
               title: Text('Screenshots', style: TextStyle(color: Colors.black),), 
               onTap: () {  
-              //   Navigator.push(  
-              //     context,  
-              //     MaterialPageRoute(builder: (context) => page1Page()),  
-              //   );  
+                Navigator.push(  
+                  context,  
+                  MaterialPageRoute(builder: (context) => screenshotPage()),  
+                );  
               },  
             ),
             
