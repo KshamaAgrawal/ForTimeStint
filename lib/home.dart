@@ -210,7 +210,7 @@ class _State extends State<homePage> {
         Row(                                    //ROW 9
           children: [
           Padding(
-              padding: EdgeInsets.fromLTRB(20, 10, 0, 40),),
+              padding: EdgeInsets.fromLTRB(20, 10, 0, 20),),
             Image.asset('assets/images/256.png', width: 40, height: 30),
             Container(
               // margin: EdgeInsets.all(10.0),
@@ -231,22 +231,24 @@ class _State extends State<homePage> {
             ),
           ],
         ),
-        // Row(                                //ROW 11
-        //   children: [
-        //     Image.asset('assets/images/256.png', width: 40, height: 30),
-        //     Container(
-        //       // margin: EdgeInsets.all(10.0),
-        //       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-        //         child: Text('Margin Security', style: TextStyle(color: Colors.black, fontSize: 18),),
-        //     ),
-        //   ],
-        // ),
+        Row(                                //ROW 11
+          children: [
+          Padding(
+              padding: EdgeInsets.fromLTRB(20, 10, 0, 20),),
+            Image.asset('assets/images/256.png', width: 40, height: 30),
+            Container(
+              // margin: EdgeInsets.all(10.0),
+              padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                child: Text('Margin Security', style: TextStyle(color: Colors.black, fontSize: 18),),
+            ),
+          ],
+        ),
       ],
     ),
       drawer: Drawer(
 
         child: ListView( 
-          // padding: EdgeInsets.zero,  
+          padding: EdgeInsets.fromLTRB(30, 30, 0, 0),
           children: <Widget>[
             new UserAccountsDrawerHeader( 
               decoration: BoxDecoration(
@@ -263,7 +265,7 @@ class _State extends State<homePage> {
             ),    
             new Divider(),  
             ListTile(  
-              title: Text('Timer', style: TextStyle(color: Colors.black),),  
+              title: Text('Timer', style: TextStyle(color: Colors.black, fontSize: 20),),  
               onTap: () {  
               //   Navigator.push(  
               //     context,  
@@ -272,7 +274,7 @@ class _State extends State<homePage> {
               },  
             ),
             ListTile(  
-              title: Text('Dashboard'),
+              title: Text('Dashboard', style: TextStyle(color: Colors.black, fontSize: 20),),
               // color: Colors.blue,  
               onTap: () {  
                 Navigator.push(  
@@ -282,7 +284,7 @@ class _State extends State<homePage> {
               },  
             ),
             ListTile(  
-              title: Text('Report', style: TextStyle(color: Colors.black),),  
+              title: Text('Report', style: TextStyle(color: Colors.black, fontSize: 20),),  
               onTap: () {  
               //   Navigator.push(  
               //     context,  
@@ -291,7 +293,7 @@ class _State extends State<homePage> {
               },  
             ),
               ListTile(  
-              title: Text('Timesheets', style: TextStyle(color: Colors.black),), 
+              title: Text('Timesheets', style: TextStyle(color: Colors.black, fontSize: 20),), 
               onTap: () {  
               //   Navigator.push(  
               //     context,  
@@ -300,7 +302,7 @@ class _State extends State<homePage> {
               },  
             ),
             ListTile(  
-              title: Text('Screenshots', style: TextStyle(color: Colors.black),), 
+              title: Text('Screenshots', style: TextStyle(color: Colors.black, fontSize: 20),), 
               onTap: () {  
                 Navigator.push(  
                   context,  
@@ -311,7 +313,7 @@ class _State extends State<homePage> {
             
             new Divider(), 
             ListTile(  
-              title: Text('LogOut'),
+              title: Text('Logout', style: TextStyle(color: Colors.black, fontSize: 20),),
               onTap: () {  
                 Navigator.push(  
                   context,  
