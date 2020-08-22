@@ -20,7 +20,7 @@ class _State extends State<dashboardPage> {
         backgroundColor: Colors.transparent,
         bottomOpacity: 0.0,
         elevation: 0.0,
-        title: Text('Dashboard', style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),),
+        title: Text('Dashboard', style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),),
       ),
       body: Center(
         child: ListView(
