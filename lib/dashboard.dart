@@ -22,9 +22,7 @@ class _State extends State<dashboardPage> {
         elevation: 0.0,
         title: Text('Dashboard', style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),),
       ),
-      body: Center(
-        child: ListView(
-          children: <Widget>[
+       body: Column(children: <Widget>[
             new UserAccountsDrawerHeader( 
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -37,8 +35,44 @@ class _State extends State<dashboardPage> {
                 ),
               ),
             ),
+            Row( 
+              children: <Widget>[
+              	Container(
+              		padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
+              		child: Text('20', style: TextStyle(fontSize: 25),),
+              	),
+              	Container(
+              		padding: EdgeInsets.fromLTRB(100, 0, 0, 0),
+              		child: Text('80', style: TextStyle(fontSize: 25),),
+              	),
+              ],
+            ),
+            Row( 
+              children: <Widget>[
+              	Container(
+              		padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
+              		child: Text('Created Tasks', style: TextStyle(fontSize: 10),),
+              	),
+              	Container(
+              		padding: EdgeInsets.fromLTRB(65, 0, 0, 0),
+              		child: Text('Total Assing Tasks', style: TextStyle(fontSize: 10),),
+              	),
+              ],
+            ),
+            Row( 
+              children: <Widget>[
+              	Container(
+              		padding: EdgeInsets.fromLTRB(40, 40, 0, 0),
+              		child: Text('Statistics', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+              	),
+              	Container(
+              		padding: EdgeInsets.fromLTRB(150, 40, 0, 0),
+              		child: Text('March 2020', style: TextStyle(fontSize: 10),),
+              	),
+              ],
+            ),
           ],
-        ),
+        
       ),
             drawer: Drawer(
 
