@@ -3,6 +3,7 @@ import 'dart:async';
 import 'home.dart';
 import 'dashboard.dart';
 import 'login_screen.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class screenshotPage extends StatefulWidget {
 
@@ -11,7 +12,6 @@ class screenshotPage extends StatefulWidget {
 }
 
 class _State extends State<screenshotPage> {
-   // Animation animation;
   
   @override  
   Widget build(BuildContext context) {  
@@ -87,7 +87,7 @@ class _State extends State<screenshotPage> {
                   Row(
                     children: [
                       Container(
-                        padding: EdgeInsets.fromLTRB(10,15,60,0),
+                        padding: EdgeInsets.fromLTRB(5,15,60,0),
                         child: Text('Keyboard'),
                       ), 
                       Container(
@@ -96,39 +96,27 @@ class _State extends State<screenshotPage> {
                       ),
                     ]
                   ),
-                  // Row(
-                  //   children: [
-                  //     Container(
-                  //       child: LinearPercentIndicator(
-                  //        width: 140.0,
-                  //        lineHeight: 14.0,
-                  //        percent: 0.5,
-                  //        backgroundColor: Colors.grey,
-                  //        progressColor: Colors.blue,
-                  //       ),
-                  //     ),
-                  //   ]
-                  // ),
-                  
                   Row(
                     children: [
                       Container(
-                        width: 130,
-                        // padding: EdgeInsets.fromLTRB(10,0,0,0),
-                        child: LinearProgressIndicator(
-                          // value: animation.value,
+                        child: LinearPercentIndicator(
+                         width: 140.0,
+                         lineHeight: 8.0,
+                         percent: 0.5,
+                         backgroundColor: Colors.grey,
+                         progressColor: Colors.yellow,
                         ),
-                      ), 
+                      ),
                     ]
                   ),
                   Row(
                     children: [
                       Container(
-                        padding: EdgeInsets.fromLTRB(10,0,70,0),
+                        padding: EdgeInsets.fromLTRB(5,20,70,0),
                         child: Text('Mouse'),
                       ), 
                       Container(
-                        padding: EdgeInsets.fromLTRB(0,10,10,20),
+                        padding: EdgeInsets.fromLTRB(0,20,10,0),
                         child: Text('244'),
                       ),
                     ]
@@ -136,22 +124,18 @@ class _State extends State<screenshotPage> {
                   Row(
                     children: [
                       Container(
-                        width: 130,
-                        // padding: EdgeInsets.fromLTRB(10,0,0,0),
-                        child: LinearProgressIndicator(
-                          // value: animation.value,
+                        child: LinearPercentIndicator(
+                         width: 140.0,
+                         lineHeight: 8.0,
+                         percent: 0.5,
+                         backgroundColor: Colors.grey,
+                         progressColor: Colors.blue,
                         ),
-                      ), 
+                      ),
                     ]
                   ),
                 ],
               ),
-                
-
-                // child: Container(
-                //   padding: EdgeInsets.fromLTRB(40,0,40,0),
-                //   child: Text('Segno-Tech'),
-                // ),
               ),
             ),
             Container(
@@ -159,7 +143,99 @@ class _State extends State<screenshotPage> {
               height: 190,
               child: Card(
                 elevation: 50,
-                child: Text('            Segno-Tech           '),
+                child: Column(children: <Widget>[
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.fromLTRB(40,0,40,0),
+                        child: Text('Segno-Tech'),
+                      ), 
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        // padding: EdgeInsets.fromLTRB(10,0,10,0),
+                        // decoration: BoxDecoration(
+                        //   color: const Color(0xff7c94b6),
+                        //   image: const DecorationImage(
+                        //     image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                        //     fit: BoxFit.cover,
+                        //   ),
+                        // decoration: new BoxDecoration(
+                        //   color: Colors.black,
+                        //   image: new DecorationImage(
+                        //     image: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
+                        //   ),
+                        // ),
+                       
+                        child: new CircleAvatar(
+                          backgroundImage: new NetworkImage("https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg"),
+                        ),
+                      ), 
+                        // ),
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.fromLTRB(10,0,80,0),
+                        child: Text('06:45 p.m.'),
+                      ), 
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.fromLTRB(5,15,60,0),
+                        child: Text('Keyboard'),
+                      ), 
+                      Container(
+                        padding: EdgeInsets.fromLTRB(0,15,10,10),
+                        child: Text('500'),
+                      ),
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        child: LinearPercentIndicator(
+                         width: 140.0,
+                         lineHeight: 8.0,
+                         percent: 0.5,
+                         backgroundColor: Colors.grey,
+                         progressColor: Colors.yellow,
+                        ),
+                      ),
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.fromLTRB(5,20,70,0),
+                        child: Text('Mouse'),
+                      ), 
+                      Container(
+                        padding: EdgeInsets.fromLTRB(0,20,10,0),
+                        child: Text('244'),
+                      ),
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        child: LinearPercentIndicator(
+                         width: 140.0,
+                         lineHeight: 8.0,
+                         percent: 0.5,
+                         backgroundColor: Colors.grey,
+                         progressColor: Colors.blue,
+                        ),
+                      ),
+                    ]
+                  ),
+                ],
+              ),
               ),
             ),
           ]
@@ -167,19 +243,203 @@ class _State extends State<screenshotPage> {
         Row(
           children: [
             Container(
-              padding: EdgeInsets.fromLTRB(10,0,0,0),
-              height: 200,
+              padding: EdgeInsets.fromLTRB(10,10,0,0),
+              height: 190,
               child: Card(
                 elevation: 50,
-                child: Text('            Segno-Tech           '),
+                child: Column(children: <Widget>[
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.fromLTRB(40,0,40,0),
+                        child: Text('Segno-Tech'),
+                      ), 
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        // padding: EdgeInsets.fromLTRB(10,0,10,0),
+                        // decoration: BoxDecoration(
+                        //   color: const Color(0xff7c94b6),
+                        //   image: const DecorationImage(
+                        //     image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                        //     fit: BoxFit.cover,
+                        //   ),
+                        // decoration: new BoxDecoration(
+                        //   color: Colors.black,
+                        //   image: new DecorationImage(
+                        //     image: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
+                        //   ),
+                        // ),
+                       
+                        child: new CircleAvatar(
+                          backgroundImage: new NetworkImage("https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg"),
+                        ),
+                      ), 
+                        // ),
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.fromLTRB(10,0,80,0),
+                        child: Text('06:45 p.m.'),
+                      ), 
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.fromLTRB(5,15,60,0),
+                        child: Text('Keyboard'),
+                      ), 
+                      Container(
+                        padding: EdgeInsets.fromLTRB(0,15,10,10),
+                        child: Text('500'),
+                      ),
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        child: LinearPercentIndicator(
+                         width: 140.0,
+                         lineHeight: 8.0,
+                         percent: 0.5,
+                         backgroundColor: Colors.grey,
+                         progressColor: Colors.yellow,
+                        ),
+                      ),
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.fromLTRB(5,20,70,0),
+                        child: Text('Mouse'),
+                      ), 
+                      Container(
+                        padding: EdgeInsets.fromLTRB(0,20,10,0),
+                        child: Text('244'),
+                      ),
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        child: LinearPercentIndicator(
+                         width: 140.0,
+                         lineHeight: 8.0,
+                         percent: 0.5,
+                         backgroundColor: Colors.grey,
+                         progressColor: Colors.blue,
+                        ),
+                      ),
+                    ]
+                  ),
+                ],
+              ),
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(10,0,0,0),
-              height: 200,
+              padding: EdgeInsets.fromLTRB(10,10,0,0),
+              height: 190,
               child: Card(
                 elevation: 50,
-                child: Text('            Segno-Tech           '),
+                child: Column(children: <Widget>[
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.fromLTRB(40,0,40,0),
+                        child: Text('Segno-Tech'),
+                      ), 
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        // padding: EdgeInsets.fromLTRB(10,0,10,0),
+                        // decoration: BoxDecoration(
+                        //   color: const Color(0xff7c94b6),
+                        //   image: const DecorationImage(
+                        //     image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                        //     fit: BoxFit.cover,
+                        //   ),
+                        // decoration: new BoxDecoration(
+                        //   color: Colors.black,
+                        //   image: new DecorationImage(
+                        //     image: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
+                        //   ),
+                        // ),
+                       
+                        child: new CircleAvatar(
+                          backgroundImage: new NetworkImage("https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg"),
+                        ),
+                      ), 
+                        // ),
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.fromLTRB(10,0,80,0),
+                        child: Text('06:45 p.m.'),
+                      ), 
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.fromLTRB(5,15,60,0),
+                        child: Text('Keyboard'),
+                      ), 
+                      Container(
+                        padding: EdgeInsets.fromLTRB(0,15,10,10),
+                        child: Text('500'),
+                      ),
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        child: LinearPercentIndicator(
+                         width: 140.0,
+                         lineHeight: 8.0,
+                         percent: 0.5,
+                         backgroundColor: Colors.grey,
+                         progressColor: Colors.yellow,
+                        ),
+                      ),
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.fromLTRB(5,20,70,0),
+                        child: Text('Mouse'),
+                      ), 
+                      Container(
+                        padding: EdgeInsets.fromLTRB(0,20,10,0),
+                        child: Text('244'),
+                      ),
+                    ]
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        child: LinearPercentIndicator(
+                         width: 140.0,
+                         lineHeight: 8.0,
+                         percent: 0.5,
+                         backgroundColor: Colors.grey,
+                         progressColor: Colors.blue,
+                        ),
+                      ),
+                    ]
+                  ),
+                ],
+              ),
               ),
             ),
           ]
