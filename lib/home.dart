@@ -3,6 +3,7 @@ import 'dart:async';
 import 'login_screen.dart';
 import 'dashboard.dart';
 import 'screenshots.dart';
+import 'project.dart';
 
 class homePage extends StatefulWidget {
 
@@ -208,36 +209,46 @@ class _State extends State<homePage> {
 
 
               Container(
-              padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-              // padding: EdgeInsets.symmetric(horizontal:20.0, vertical: 50.0),
-                
-              child: Text('Security Troops', style: TextStyle(color: Colors.black, fontSize: 18),),
-              // icon: Icon(Icons.home),
-            ),
+                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                child: FlatButton(
+                  child: Text('Security Troops', style: TextStyle(color: Colors.black, fontSize: 18),),
+                  onPressed: () {  
+                    Navigator.push(  
+                      context,  
+                      MaterialPageRoute(builder: (context) => projectPage()),  
+                    );  
+                  }, 
+                ),
+              ),
               Container(
                 padding: EdgeInsets.fromLTRB(80, 0, 0, 0),
-              child: Icon(
-                          Icons.keyboard_arrow_right, 
-                          color: Colors.black,
-                          // height: 20,
-                          // width: 20,
-                        ),
-                        ), 
+                child: Icon(
+                  Icons.keyboard_arrow_right, 
+                  color: Colors.black,
+                  // height: 20,
+                  // width: 20,
+                ),
+              ), 
                
           ],
         ),
         Row(                              //ROW 8
           children: [
-            // margin: EdgeInsets.all(10.0),
             Padding(
               padding: EdgeInsets.fromLTRB(20, 0, 0, 40),),
             Image.asset('assets/images/256.png', width: 40, height: 30),
             Container(
               padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-              // padding: EdgeInsets.symmetric(horizontal:20.0, vertical: 50.0),
-              child: Text('Time Stint', style: TextStyle(color: Colors.black, fontSize: 18),),
+              child: FlatButton(
+                child: Text('Time Stint', style: TextStyle(color: Colors.black, fontSize: 18),),
+                onPressed: () {  
+                  Navigator.push(  
+                    context,  
+                    MaterialPageRoute(builder: (context) => projectPage()),  
+                  );  
+                }, 
+              ),
             ),
-
           ],
         ),
         Row(                                    //ROW 9
@@ -248,7 +259,15 @@ class _State extends State<homePage> {
             Container(
               // margin: EdgeInsets.all(10.0),
               padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+              child: FlatButton(
                 child: Text('Govt Exam Jobs', style: TextStyle(color: Colors.black, fontSize: 18),),
+                onPressed: () {  
+                  Navigator.push(  
+                    context,  
+                    MaterialPageRoute(builder: (context) => projectPage()),  
+                  );  
+                }, 
+              ),
             ),
           ],
         ),
@@ -260,7 +279,15 @@ class _State extends State<homePage> {
             Container(
               // margin: EdgeInsets.all(10.0),
               padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+              child: FlatButton(
                 child: Text('Life Ideology', style: TextStyle(color: Colors.black, fontSize: 18),),
+                onPressed: () {  
+                  Navigator.push(  
+                    context,  
+                    MaterialPageRoute(builder: (context) => projectPage()),  
+                  );  
+                }, 
+              ),
             ),
           ],
         ),
@@ -272,7 +299,15 @@ class _State extends State<homePage> {
             Container(
               // margin: EdgeInsets.all(10.0),
               padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+              child: FlatButton(
                 child: Text('Margin Security', style: TextStyle(color: Colors.black, fontSize: 18),),
+                onPressed: () {  
+                  Navigator.push(  
+                    context,  
+                    MaterialPageRoute(builder: (context) => projectPage()),  
+                  );  
+                }, 
+              ),
             ),
           ],
         ),
