@@ -11,7 +11,9 @@ class projectPage extends StatefulWidget {
 }
 
 class _State extends State<projectPage>{
-	@override  
+   // final controller = PageController();
+
+  @override  
   Widget build(BuildContext context){
   	return Scaffold(
       appBar: AppBar(
@@ -174,6 +176,23 @@ class _State extends State<projectPage>{
         ),
         Row(
           children: [
+          	new TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.directions_car), text: "Tab 1",),
+                Tab(icon: Icon(Icons.directions_transit), text: "Tab 2"),
+              ],
+            ),
+			          	
+			// TabbarHeader(
+			//   controller: controller,
+			//   tabs: [
+			//     Tab(child: Icon(Icons.ac_unit)),
+			//     Tab(text: "Tab 2"),
+			//     Tab(child: Icon(Icons.access_alarm)),
+			//   ],
+			// ),
+
+
             Container(
             	padding: EdgeInsets.fromLTRB(40,30,0,0),
       	  	  	child: Text('My Tasks', style: TextStyle(color: Colors.black, fontSize: 18),),
