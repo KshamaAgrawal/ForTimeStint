@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'home.dart';
+import 'splashScreen.dart';
 
 class LoginPage extends StatefulWidget {
 
@@ -74,7 +75,7 @@ class _State extends State<LoginPage> {
                   if(nameController.text == Username || passwordController.text == Password){
                     Navigator.push(  
                       context,  
-                      MaterialPageRoute(builder: (context) => homePage()),  
+                      MaterialPageRoute(builder: (context) => SplashScreen()),  
                     );
                   }
                   else{
