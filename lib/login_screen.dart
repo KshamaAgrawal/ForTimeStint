@@ -75,7 +75,7 @@ class _State extends State<LoginPage> {
                   if(nameController.text == Username || passwordController.text == Password){
                     Navigator.push(  
                       context,  
-                      MaterialPageRoute(builder: (context) => SplashScreen()),  
+                      MaterialPageRoute(builder: (context) => homePage()),  
                     );
                   }
                   else{

@@ -1,14 +1,22 @@
 # ForTimeStint
 
-# To see all details:
-# flutter doctor
+## To see all details:
+	flutter doctor
 
-# To run flutter app:
-# flutter run
+## To run flutter app:
+	flutter run
 
-# after implement in yaml file:
-# flutter pub get
+## after implement in yaml file:
+	flutter pub get
 
-# after import package in amy file
-# flutter packages upgrade
+## after import package in amy file:
+	flutter packages upgrade
+
+## for percent Indicator implement in yaml file: 
+	dependencies:
+		percent_indicator: "^2.1.5"
+
+## To add assets to your application, add an assets section, like this:
+	assets:
+    - assets/images/
 

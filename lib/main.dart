@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import 'login_screen.dart';
+import 'splashScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // debugShowCheckedModeBanner: false,                                          // remove debug banner form main.dart
-      theme: ThemeData(primarySwatch: Colors.blue), home: LoginPage()
+      theme: ThemeData(primarySwatch: Colors.blue), home: SplashScreen()
     );
   }
 }
