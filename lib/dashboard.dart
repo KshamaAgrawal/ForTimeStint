@@ -65,7 +65,7 @@ class _State extends State<dashboardPage> {
               children: <Widget>[
                 Container(
         		  padding: EdgeInsets.fromLTRB(10,0,0,0),
-	              height: 110,
+	              height: 100,
 	              child: Card(
 	              	color: Colors.blueAccent[400],
 	              	elevation: 50,
@@ -92,7 +92,7 @@ class _State extends State<dashboardPage> {
                 ),
                 Container(
         		  padding: EdgeInsets.fromLTRB(10,0,0,0),
-	              height: 110,
+	              height: 100,
 	              child: Card(
 	              	color: Colors.lightGreenAccent[700],
 	              	elevation: 50,
@@ -119,7 +119,7 @@ class _State extends State<dashboardPage> {
                 ),
                 Container(
         		  padding: EdgeInsets.fromLTRB(10,0,0,0),
-	              height: 110,
+	              height: 100,
 	              child: Card(
 	              	color: Colors.pink,
 	              	elevation: 50,
