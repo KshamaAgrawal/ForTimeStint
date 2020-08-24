@@ -80,6 +80,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "percent_indicator",
+      "rootUri": "file:///var/flutter/.pub-cache/hosted/pub.dartlang.org/percent_indicator-2.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "1.19"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///var/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -140,7 +146,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-08-22T08:17:27.611749Z",
+  "generated": "2020-08-24T05:37:06.301341Z",
   "generator": "pub",
   "generatorVersion": "2.9.1"
 }
