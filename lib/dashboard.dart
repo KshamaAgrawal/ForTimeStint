@@ -28,6 +28,7 @@ class _State extends State<dashboardPage> {
               decoration: BoxDecoration(
                 color: Colors.white,
               ),
+              // icon: Icon(Icons.calendar_today),
               accountName: new Text("Tom Curise", style: TextStyle(color: Colors.black),),
               accountEmail: new Text("Senior Developer", style: TextStyle(color: Colors.blue),),
               currentAccountPicture: new GestureDetector(
@@ -35,7 +36,26 @@ class _State extends State<dashboardPage> {
                   backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
                 ),
               ),
+              // icon: Icon(Icons.calendar_today),
             ),
+            // Row(
+            //   children: <Widget>[
+            //     Container(
+            //       // IconButton(
+            //     Icon: Icon(Icons.calendar_today),
+            //     tooltip: 'Tap to open date picker',
+            //     onPressed: () {
+            //         showDatePicker(
+            //             context: context,
+            //             initialDate: DateTime.now(),
+            //             firstDate: DateTime(2015, 8),
+            //             lastDate: DateTime(2101),
+            //         );
+            //     },
+            //   // ),
+            //     ),
+            //   ],
+            // ),
             Row( 
               children: <Widget>[
               	Container(
