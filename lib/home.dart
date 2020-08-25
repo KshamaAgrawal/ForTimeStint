@@ -205,7 +205,7 @@ class _State extends State<homePage> {
             // margin: EdgeInsets.all(10.0),
             Padding(
               padding: EdgeInsets.fromLTRB(20, 0, 0, 40),),
-            Image.asset('assets/images/256.png', width: 40, height: 30),
+            Image.asset('assets/images/st-1024-logo.png', width: 40, height: 30),
 
 
               Container(
@@ -255,7 +255,7 @@ class _State extends State<homePage> {
           children: [
           Padding(
               padding: EdgeInsets.fromLTRB(20, 10, 0, 20),),
-            Image.asset('assets/images/256.png', width: 40, height: 30),
+            Image.asset('assets/images/BPNL.png', width: 40, height: 30),
             Container(
               // margin: EdgeInsets.all(10.0),
               padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
@@ -275,7 +275,7 @@ class _State extends State<homePage> {
           children: [
           Padding(
               padding: EdgeInsets.fromLTRB(20, 10, 0, 40),),
-            Image.asset('assets/images/256.png', width: 40, height: 30),
+            Image.asset('assets/images/li-logo-1024.png', width: 40, height: 30),
             Container(
               // margin: EdgeInsets.all(10.0),
               padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
@@ -295,7 +295,7 @@ class _State extends State<homePage> {
           children: [
           Padding(
               padding: EdgeInsets.fromLTRB(20, 10, 0, 20),),
-            Image.asset('assets/images/256.png', width: 40, height: 30),
+            Image.asset('assets/images/long.png', width: 40, height: 30),
             Container(
               // margin: EdgeInsets.all(10.0),
               padding: EdgeInsets.fromLTRB(10, 0, 0, 0),

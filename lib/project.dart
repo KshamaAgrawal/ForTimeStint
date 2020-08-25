@@ -27,7 +27,7 @@ class _State extends State<projectPage>{
             Padding(
               padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
             ),
-            Image.asset('assets/images/256.png', width: 40, height: 30),
+            Image.asset('assets/images/st-1024-logo.png', width: 40, height: 30),
 
             Container(
               padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
