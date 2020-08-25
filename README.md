@@ -20,3 +20,10 @@
 	assets:
     - assets/images/
 
+## modify .yaml file for using API:
+	http: any
+	shared_preferences: any  
+
+## After update yaml file run command: 
+	flutter pub get
+
