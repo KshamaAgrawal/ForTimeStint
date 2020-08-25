@@ -4,6 +4,7 @@ import 'login_screen.dart';
 import 'dashboard.dart';
 import 'screenshots.dart';
 import 'project.dart';
+import 'profile.dart';
 
 class homePage extends StatefulWidget {
 
@@ -343,6 +344,12 @@ class _State extends State<homePage> {
           // ),
             new UserAccountsDrawerHeader( 
               currentAccountPicture: new GestureDetector(
+
+                    onTap: () =>  Navigator.push(  
+                    context,  
+                    MaterialPageRoute(builder: (context) => profilePage()),  
+                  ) ,
+                  
                 child: new CircleAvatar(
                   // backgroundColor: Colors.white,
                   backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
@@ -353,6 +360,7 @@ class _State extends State<homePage> {
               ),
               accountName: new Text("Tom Curise", style: TextStyle(color: Colors.black),),
               accountEmail: new Text("Senior Developer", style: TextStyle(color: Colors.blue),),
+              // onTap()
               // currentAccountPicture: new GestureDetector(
               //   child: new CircleAvatar(
               //     // backgroundColor: Colors.white,
