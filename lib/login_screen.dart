@@ -14,8 +14,7 @@ class LoginPage extends StatefulWidget {
 class _State extends State<LoginPage> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
-  
+   
   @override
 
   login(String Username, String Password) async{
@@ -31,9 +30,9 @@ class _State extends State<LoginPage> {
       jsonData = json.decode(response.body);
       print(jsonData);
       Navigator.push(  
-          context,  
-          MaterialPageRoute(builder: (context) => homePage()),  
-        );  
+        context,  
+        MaterialPageRoute(builder: (context) => homePage()),  
+      );  
     }
     else{
       AlertDialog alert = AlertDialog(  

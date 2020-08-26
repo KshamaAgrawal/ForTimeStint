@@ -13,10 +13,9 @@ class homePage extends StatefulWidget {
 }
 
 class _State extends State<homePage> {
-  // int _value = 1;
-  String newValue;
+ String newValue;
 
- @override  
+  @override  
   Widget build(BuildContext context) {  
     return Scaffold(
       appBar: AppBar(
@@ -30,7 +29,6 @@ class _State extends State<homePage> {
           children: [
             Container(
               padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
-              // padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 0.0),
               child: Text('Saturday August 6th', style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),),
             ),
           ],
@@ -159,20 +157,7 @@ class _State extends State<homePage> {
               padding: EdgeInsets.fromLTRB(65,0, 0, 0),
               child: DropdownButton(
                 isExpanded: true,
-               // items: [
-                //   DropdownMenuItem(
-                //     child: Text("Segno Tech", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                //     value: 1,
-                //   ),
-                //   DropdownMenuItem(
-                //     child: Text("Security Troops"),
-                //     value: 2,
-                //   ),
-                // ],
-                // onChanged: (value) {
-                //   setState() {
-                //     _value = value;
-                //   };
+                
                 onChanged: (String changedValue) {
                   newValue=changedValue;
                   setState(() {
@@ -186,10 +171,7 @@ class _State extends State<homePage> {
                   fontSize: 20,
                   fontWeight: FontWeight.bold
                 ),
-                // icon: Icon(Icons.arrow_downward),
-                // iconSize: 20.0, // can be changed, default: 24.0
-                // iconEnabledColor: Colors.black,
-              items: <String>['Segno Tech', 'Security Troops']
+                items: <String>['Segno Tech', 'Security Troops']
                   .map((String value) {
                 return new DropdownMenuItem<String>(
                   value: value,
@@ -199,38 +181,32 @@ class _State extends State<homePage> {
             ),
           ],
         ),
-        // Padding(
-        //       padding: EdgeInsets.fromLTRB(20, 0, 0, 60),),
         Row(                              //ROW 8
           children: [
-            // margin: EdgeInsets.all(10.0),
             Padding(
               padding: EdgeInsets.fromLTRB(20, 0, 0, 40),),
             Image.asset('assets/images/st-1024-logo.png', width: 40, height: 30),
-
-
-              Container(
-                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                child: FlatButton(
-                  child: Text('Security Troops', style: TextStyle(color: Colors.black, fontSize: 18),),
-                  onPressed: () {  
-                    Navigator.push(  
-                      context,  
-                      MaterialPageRoute(builder: (context) => projectPage()),  
-                    );  
-                  }, 
-                ),
+            Container(
+              padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+              child: FlatButton(
+                child: Text('Security Troops', style: TextStyle(color: Colors.black, fontSize: 18),),
+                onPressed: () {  
+                  Navigator.push(  
+                    context,  
+                    MaterialPageRoute(builder: (context) => projectPage()),  
+                  );  
+                }, 
               ),
-              Container(
-                padding: EdgeInsets.fromLTRB(80, 0, 0, 0),
-                child: Icon(
-                  Icons.keyboard_arrow_right, 
-                  color: Colors.black,
-                  // height: 20,
-                  // width: 20,
-                ),
-              ), 
-               
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(80, 0, 0, 0),
+              child: Icon(
+                Icons.keyboard_arrow_right, 
+                color: Colors.black,
+                // height: 20,
+                // width: 20,
+              ),
+            ),                
           ],
         ),
         Row(                              //ROW 8
@@ -315,9 +291,7 @@ class _State extends State<homePage> {
       ],
     ),
       drawer: Drawer(
-
         child: ListView( 
-          // padding: EdgeInsets.fromLTRB(30, 30, 0, 0),
           children: <Widget>[
           // Row(
           //   children: [
@@ -344,14 +318,11 @@ class _State extends State<homePage> {
           // ),
             new UserAccountsDrawerHeader( 
               currentAccountPicture: new GestureDetector(
-
-                    onTap: () =>  Navigator.push(  
+                  onTap: () =>  Navigator.push(  
                     context,  
                     MaterialPageRoute(builder: (context) => profilePage()),  
                   ) ,
-                  
                 child: new CircleAvatar(
-                  // backgroundColor: Colors.white,
                   backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
                 ),
               ),
@@ -360,43 +331,7 @@ class _State extends State<homePage> {
               ),
               accountName: new Text("Tom Curise", style: TextStyle(color: Colors.black),),
               accountEmail: new Text("Senior Developer", style: TextStyle(color: Colors.blue),),
-              // onTap()
-              // currentAccountPicture: new GestureDetector(
-              //   child: new CircleAvatar(
-              //     // backgroundColor: Colors.white,
-              //     backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
-              //   ),
-              // ),
             ),
-
-        //       UserAccountsDrawerHeader(
-        //   accountEmail: Text(''), // keep blank text because email is required
-        //   accountName: Row(
-        //     children: <Widget>[
-        //       Container(
-        //         // width: 50,
-        //         // height: 50,
-        //         decoration: BoxDecoration(shape: BoxShape.circle),
-        //         child: CircleAvatar(
-        //          backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
-        //         // color: Colors.white,
-        //         ),
-        //       ),
-        //       // decoration: BoxDecoration(
-        //       //   color: Colors.white,
-        //       // ),
-        //       Column(
-        //         mainAxisAlignment: MainAxisAlignment.center,
-        //         children: <Widget>[
-        //           Text('Tom Curise' , style: TextStyle(color: Colors.black, fontSize: 18),),
-        //           Text('Senior Developer' , style: TextStyle(color: Colors.white, fontSize: 14),),
-        //         ],
-        //       ),
-        //     ],
-        //   ),
-        // ),
-
-            // new Divider(),  
             ListTile(  
               title: Text('Timer', style: TextStyle(color: Colors.black, fontSize: 15),),
               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),  
@@ -447,8 +382,7 @@ class _State extends State<homePage> {
                   MaterialPageRoute(builder: (context) => screenshotPage()),  
                 );  
               },  
-            ),
-            
+            ),            
             new Divider(), 
             ListTile(  
               leading: Icon(Icons.power_settings_new, color: Colors.black),

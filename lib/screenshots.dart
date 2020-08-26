@@ -3,10 +3,10 @@ import 'dart:async';
 import 'home.dart';
 import 'dashboard.dart';
 import 'login_screen.dart';
+import 'profile.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class screenshotPage extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() => new _State();
 }
@@ -444,36 +444,10 @@ class _State extends State<screenshotPage> {
             ),
           ]
         ),
-        // Row(
-        //   children: [
-        //     Container(
-        //       padding: EdgeInsets.fromLTRB(10,20,0,0),
-        //       // color: Colors.white,
-        //       height: 200,
-        //       // width: 50,
-        //       // width: double.maxFinite,
-        //       child: Card(
-        //         elevation: 50,
-        //         // Row(
-        //         //   children[
-        //         //     Container(
-        //               child: Text('            Segno-Tech           '),
-                     
-        //         //     ),
-        //         //   ],
-        //         // ),
-        //       ),
-        //     ),
-            
-        //   ]
-        // ),
-      
       ],
       ),
-            drawer: Drawer(
-
+      drawer: Drawer(
         child: ListView( 
-          // padding: EdgeInsets.fromLTRB(30, 30, 0, 0),
           children: <Widget>[
           // Row(
           //   children: [
@@ -500,8 +474,11 @@ class _State extends State<screenshotPage> {
           // ),
             new UserAccountsDrawerHeader( 
               currentAccountPicture: new GestureDetector(
+                  onTap: () =>  Navigator.push(  
+                    context,  
+                    MaterialPageRoute(builder: (context) => profilePage()),  
+                  ) ,
                 child: new CircleAvatar(
-                  // backgroundColor: Colors.white,
                   backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
                 ),
               ),
@@ -510,42 +487,7 @@ class _State extends State<screenshotPage> {
               ),
               accountName: new Text("Tom Curise", style: TextStyle(color: Colors.black),),
               accountEmail: new Text("Senior Developer", style: TextStyle(color: Colors.blue),),
-              // currentAccountPicture: new GestureDetector(
-              //   child: new CircleAvatar(
-              //     // backgroundColor: Colors.white,
-              //     backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
-              //   ),
-              // ),
             ),
-
-        //       UserAccountsDrawerHeader(
-        //   accountEmail: Text(''), // keep blank text because email is required
-        //   accountName: Row(
-        //     children: <Widget>[
-        //       Container(
-        //         // width: 50,
-        //         // height: 50,
-        //         decoration: BoxDecoration(shape: BoxShape.circle),
-        //         child: CircleAvatar(
-        //          backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
-        //         // color: Colors.white,
-        //         ),
-        //       ),
-        //       // decoration: BoxDecoration(
-        //       //   color: Colors.white,
-        //       // ),
-        //       Column(
-        //         mainAxisAlignment: MainAxisAlignment.center,
-        //         children: <Widget>[
-        //           Text('Tom Curise' , style: TextStyle(color: Colors.black, fontSize: 18),),
-        //           Text('Senior Developer' , style: TextStyle(color: Colors.white, fontSize: 14),),
-        //         ],
-        //       ),
-        //     ],
-        //   ),
-        // ),
-
-            // new Divider(),  
             ListTile(  
               title: Text('Timer', style: TextStyle(color: Colors.black, fontSize: 15),),
               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),  
@@ -596,8 +538,7 @@ class _State extends State<screenshotPage> {
                   MaterialPageRoute(builder: (context) => screenshotPage()),  
                 );  
               },  
-            ),
-            
+            ),            
             new Divider(), 
             ListTile(  
               leading: Icon(Icons.power_settings_new, color: Colors.black),
