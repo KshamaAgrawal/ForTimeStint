@@ -27,3 +27,14 @@
 ## After update yaml file run command: 
 	flutter pub get
 
+## for use localstorage update yaml file: 
+	dependencies:
+		localstorage: ^3.0.0
+
+## for use flutterSEcureStorage update yaml file: 
+	dependencies:
+		flutter_secure_storage: ^3.3.3
+
+## /var/www/apps/time/ForTimeStint/android/app/build.gradle :
+	 minSdkVersion 18
+

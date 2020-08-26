@@ -4,6 +4,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'home.dart';
 import 'splashScreen.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+// import 'package:localstorage/localstorage.dart';
 
 class LoginPage extends StatefulWidget {
 
@@ -14,10 +16,14 @@ class LoginPage extends StatefulWidget {
 class _State extends State<LoginPage> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-   
+  
+  final storage = new FlutterSecureStorage();
+  // final LocalStorage storage = new LocalStorage('some_key');
+
   @override
 
   login(String Username, String Password) async{
+    
     print("function work");
     Map data = {
       'username': Username,
@@ -29,6 +35,9 @@ class _State extends State<LoginPage> {
     if(response.statusCode == 200){
       jsonData = json.decode(response.body);
       print(jsonData);
+      var Token = await storage.write(key: 'token');
+      // print(token);
+      // await storage.write(key: key, value: value);
       Navigator.push(  
         context,  
         MaterialPageRoute(builder: (context) => homePage()),  
@@ -47,9 +56,36 @@ class _State extends State<LoginPage> {
       );
     }
   }
+  // Future<void> main() async
+  // Future<void> main() async {
+  //   Map<String, String> allValues = await storage.readAll();
+  // }
 
   Widget build(BuildContext context) {
-   return Scaffold(
+    // return FutureBuilder(
+    //   future: storage.ready,
+    //   builder: (BuildContext context, snapshot) {
+    //     if (snapshot.data == true) {
+    //       Map<String, dynamic> data = storage.getItem('key');
+
+    //       // return SomeDataView(data: data);
+    //     } 
+    //     // else {
+    //   //      AlertDialog alert = AlertDialog(  
+    //   //   title: Text("Simple Alert"),  
+    //   //   content: Text("Invalid Username and Password", style: TextStyle(color: Colors.red),),    
+    //   // ); 
+    //   // showDialog(  
+    //   //   context: context,  
+    //   //   builder: (BuildContext context) {  
+    //   //     return alert;  
+    //   //   },  
+    //   // );
+    //   //   }
+    //   },
+    // );
+    // Map<String, String> async {allValues = await storage.readAll(),};
+    return Scaffold(
       body: Center(
         child: ListView(
           children: <Widget>[
