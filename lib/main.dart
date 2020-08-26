@@ -48,13 +48,14 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 // }
 // 	
 void main() async {
+	print("hello");
 	WidgetsFlutterBinding.ensureInitialized();
   	// Set default home.
   	var token = "";
 	final storage = new FlutterSecureStorage();
  	Widget _defaultHome = new LoginPage();
 
-  	token = await storage.read(key: 'token');
+  	token = await storage.read(key: 'e');
   	print(token);
   	// Get result of the login function.
  //  	if (token != null) {

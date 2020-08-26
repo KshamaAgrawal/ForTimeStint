@@ -23,7 +23,7 @@ class _State extends State<LoginPage> {
   @override
 
   login(String Username, String Password) async{
-    
+    var token = "";
     print("function work");
     Map data = {
       'username': Username,
@@ -33,10 +33,34 @@ class _State extends State<LoginPage> {
     var response = await http.post("https://testing.timestint.com/tsapi/v1/login/", body: data);
     print(response.statusCode);
     if(response.statusCode == 200){
+      var stringData = (response.body);
+      print(stringData);
+
       jsonData = json.decode(response.body);
-      print(jsonData);
-      var Token = await storage.write(key: 'token');
-      // print(token);
+
+      var tokenData = (jsonData['data']['token']);
+      print(tokenData);
+
+      var idData = (jsonData['data']['id']);
+      print(idData);
+
+      var UsernameData = (jsonData['data']['username']);
+      print(UsernameData);
+
+      var EmailData = (jsonData['data']['email']);
+      print(EmailData);
+
+      var mobileData = (jsonData['data']['mobile']);
+      print(mobileData);
+
+      var FNData = (jsonData['data']['first_name']);
+      print(FNData);
+
+      print(jsonData['data']);
+
+      await storage.write(key: 'e', value: 'email');
+      token = await storage.read(key: 'e');
+      print(token);
       // await storage.write(key: key, value: value);
       Navigator.push(  
         context,  
