@@ -5,15 +5,52 @@ import 'dashboard.dart';
 import 'screenshots.dart';
 import 'project.dart';
 import 'profile.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'dart:convert';
 
 class homePage extends StatefulWidget {
+  // var first;
+  // var mail;
+  // var Username;
+  // var mobileno;
 
   @override
   State<StatefulWidget> createState() => new _State();
+  // State<StatefulWidget> createState() => new _State(first,mail,Username,mobileno);
 }
 
+
 class _State extends State<homePage> {
- String newValue;
+  var first = "TimeStint";
+  var mail = 'TimeStint';
+  var Username = 'TimeStint';
+  var mobileno = 'TimeStint';
+
+  String newValue;
+  final storage = new FlutterSecureStorage();
+ // var EmailData;
+
+ // _State(this.first, this.mail, this.Username, this.mobileno);
+
+  @override
+  void initState() {
+    this.getData();
+    super.initState();
+  }
+
+  Future<String> getData() async{
+    first = await storage.read(key: 'first_name');
+    // print(first);
+
+    mail = await storage.read(key: 'email');
+    // print(mail);
+
+    Username = await storage.read(key: 'username');
+    print(Username);
+
+    mobileno = await storage.read(key: 'mobile');
+    print(mobileno);
+  }
 
   @override  
   Widget build(BuildContext context) {  
@@ -329,8 +366,8 @@ class _State extends State<homePage> {
               decoration: BoxDecoration(
                 color: Colors.white,
               ),
-              accountName: new Text("Tom Curise", style: TextStyle(color: Colors.black),),
-              accountEmail: new Text("Senior Developer", style: TextStyle(color: Colors.blue),),
+              accountName: new Text(first, style: TextStyle(color: Colors.black),),
+              accountEmail: new Text(mail, style: TextStyle(color: Colors.blue),),
             ),
             ListTile(  
               title: Text('Timer', style: TextStyle(color: Colors.black, fontSize: 15),),

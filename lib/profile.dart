@@ -5,6 +5,8 @@ import 'screenshots.dart';
 import 'login_screen.dart';
 import 'dashboard.dart';
 import 'profile.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'dart:convert';
 
 class profilePage extends StatefulWidget {
   @override
@@ -12,6 +14,32 @@ class profilePage extends StatefulWidget {
 }
 
 class _State extends State<profilePage>{
+  var first = "TimeStint";
+  var mail = 'TimeStint';
+  var Username = 'TimeStint';
+  var mobileno = 'TimeStint';
+
+  final storage = new FlutterSecureStorage();
+ 
+  @override
+  void initState() {
+    super.initState();
+    this.getData();
+  }
+
+  Future<String> getData() async{
+    first = await storage.read(key: 'first_name');
+    print(first);
+
+    mail = await storage.read(key: 'email');
+    print(mail);
+
+    Username = await storage.read(key: 'username');
+    print(Username);
+
+    mobileno = await storage.read(key: 'mobile');
+    print(mobileno);
+  }
 
   @override  
   Widget build(BuildContext context){
@@ -48,7 +76,7 @@ class _State extends State<profilePage>{
       	  children: [
       	    Container(
       	    	padding: EdgeInsets.fromLTRB(128, 20, 0, 0),
-      	      child: new Text("Tom Curise", style: TextStyle(color: Colors.black, fontSize: 20,),),
+      	      child: new Text(first, style: TextStyle(color: Colors.black, fontSize: 20,),),
       	    ),
       	  ],
       	),
@@ -56,7 +84,7 @@ class _State extends State<profilePage>{
       	  children: [
       	    Container(
       	    	padding: EdgeInsets.fromLTRB(100, 0, 0, 0),
-      	      child: new Text("Senior Developer", style: TextStyle(color: Colors.blue, fontSize: 18,),),
+      	      child: new Text(mail, style: TextStyle(color: Colors.blue, fontSize: 18,),),
       	    ),
       	  ],
       	),
@@ -68,7 +96,7 @@ class _State extends State<profilePage>{
       	    ),
       	    Container(
       	    	padding: EdgeInsets.fromLTRB(100, 10, 0, 0),
-      	    	child: Text('tom2007@gmail.com', style: TextStyle(fontSize: 18),),
+      	    	child: Text(mail, style: TextStyle(fontSize: 18),),
       	    ),
       	  ],
       	),
@@ -80,7 +108,7 @@ class _State extends State<profilePage>{
       	    ),
       	    Container(
       	    	padding: EdgeInsets.fromLTRB(100, 0, 0, 0),
-      	    	child: Text('9487367584', style: TextStyle(fontSize: 18),),
+      	    	child: Text(mobileno, style: TextStyle(fontSize: 18),),
       	    ),
       	  ],
       	),
@@ -92,7 +120,7 @@ class _State extends State<profilePage>{
       	    ),
       	    Container(
       	    	padding: EdgeInsets.fromLTRB(100, 10, 0, 0),
-      	    	child: Text('tomcruise', style: TextStyle(fontSize: 18),),
+      	    	child: Text(Username, style: TextStyle(fontSize: 18),),
       	    ),
       	  ],
       	),
@@ -156,8 +184,8 @@ class _State extends State<profilePage>{
               decoration: BoxDecoration(
                 color: Colors.white,
               ),
-              accountName: new Text("Tom Curise", style: TextStyle(color: Colors.black),),
-              accountEmail: new Text("Senior Developer", style: TextStyle(color: Colors.blue),),
+              accountName: new Text(first, style: TextStyle(color: Colors.black),),
+              accountEmail: new Text(mail, style: TextStyle(color: Colors.blue),),
             ),
             ListTile(  
               title: Text('Timer', style: TextStyle(color: Colors.black, fontSize: 15),),

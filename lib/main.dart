@@ -55,8 +55,9 @@ void main() async {
 	final storage = new FlutterSecureStorage();
  	Widget _defaultHome = new LoginPage();
 
-  	token = await storage.read(key: 'e');
-  	print(token);
+  	await storage.write(key: 'e' , value: 'FNData');
+  	// token = await storage.read(key: 'first_name');
+  	// print(token);
   	// Get result of the login function.
  //  	if (token != null) {
  //    	_defaultHome = new LoginPage();

@@ -42,7 +42,7 @@ class _State extends State<LoginPage> {
       print(tokenData);
 
       var idData = (jsonData['data']['id']);
-      print(idData);
+      print(idData.runtimeType);
 
       var UsernameData = (jsonData['data']['username']);
       print(UsernameData);
@@ -51,17 +51,23 @@ class _State extends State<LoginPage> {
       print(EmailData);
 
       var mobileData = (jsonData['data']['mobile']);
-      print(mobileData);
+      print(mobileData.runtimeType);
 
       var FNData = (jsonData['data']['first_name']);
       print(FNData);
 
       print(jsonData['data']);
 
-      await storage.write(key: 'e', value: 'email');
-      token = await storage.read(key: 'e');
-      print(token);
+      await storage.write(key: 'first_name' , value: FNData);
+      await storage.write(key: 'email'      , value: EmailData);
+      await storage.write(key: 'id'         , value: idData.toString());
+      await storage.write(key: 'username'   , value: UsernameData);
+      await storage.write(key: 'mobile'     , value: mobileData.toString());
+      
+      // token = await storage.read(key: 'first_name');
+      // print(token);
       // await storage.write(key: key, value: value);
+      // print(jsonData);
       Navigator.push(  
         context,  
         MaterialPageRoute(builder: (context) => homePage()),  

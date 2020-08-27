@@ -5,6 +5,8 @@ import 'screenshots.dart';
 import 'login_screen.dart';
 import 'profile.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'dart:convert';
 
 class dashboardPage extends StatefulWidget {
 
@@ -13,6 +15,32 @@ class dashboardPage extends StatefulWidget {
 }
 
 class _State extends State<dashboardPage> {
+  var first = "TimeStint";
+  var mail = 'TimeStint';
+  var Username = 'TimeStint';
+  var mobileno = 'TimeStint';
+
+  final storage = new FlutterSecureStorage();
+ 
+  @override
+  void initState() {
+    super.initState();
+    this.getData();
+  }
+
+  Future<String> getData() async{
+    first = await storage.read(key: 'first_name');
+    print(first);
+
+    mail = await storage.read(key: 'email');
+    print(mail);
+
+    Username = await storage.read(key: 'username');
+    print(Username);
+
+    mobileno = await storage.read(key: 'mobile');
+    print(mobileno);
+  }
   
   @override  
   Widget build(BuildContext context) {  
@@ -29,8 +57,8 @@ class _State extends State<dashboardPage> {
           decoration: BoxDecoration(
             color: Colors.white,
           ),
-          accountName: new Text("Tom Curise", style: TextStyle(color: Colors.black),),
-          accountEmail: new Text("Senior Developer", style: TextStyle(color: Colors.blue),),
+          accountName: new Text(first, style: TextStyle(color: Colors.black),),
+          accountEmail: new Text(mail, style: TextStyle(color: Colors.blue),),
           currentAccountPicture: new GestureDetector(
             child: new CircleAvatar(
               backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
@@ -271,8 +299,8 @@ class _State extends State<dashboardPage> {
               decoration: BoxDecoration(
                 color: Colors.white,
               ),
-              accountName: new Text("Tom Curise", style: TextStyle(color: Colors.black),),
-              accountEmail: new Text("Senior Developer", style: TextStyle(color: Colors.blue),),
+              accountName: new Text(first, style: TextStyle(color: Colors.black),),
+              accountEmail: new Text(mail, style: TextStyle(color: Colors.blue),),
             ),
             ListTile(  
               title: Text('Timer', style: TextStyle(color: Colors.black, fontSize: 15),),
