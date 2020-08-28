@@ -5,10 +5,8 @@ import 'dart:convert';
 import 'home.dart';
 import 'splashScreen.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-// import 'package:localstorage/localstorage.dart';
 
 class LoginPage extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() => new _State();
 }
@@ -18,8 +16,6 @@ class _State extends State<LoginPage> {
   TextEditingController passwordController = TextEditingController();
   
   final storage = new FlutterSecureStorage();
-  // final LocalStorage storage = new LocalStorage('some_key');
-
   @override
 
   login(String Username, String Password) async{
@@ -38,7 +34,7 @@ class _State extends State<LoginPage> {
 
       jsonData = json.decode(response.body);
 
-      var tokenData = (jsonData['data']['token']);
+      var tokenData = jsonData['data']['token'];
       print(tokenData);
 
       var idData = (jsonData['data']['id']);
@@ -63,11 +59,27 @@ class _State extends State<LoginPage> {
       await storage.write(key: 'id'         , value: idData.toString());
       await storage.write(key: 'username'   , value: UsernameData);
       await storage.write(key: 'mobile'     , value: mobileData.toString());
+      await storage.write(key: 'token'   , value: tokenData);
+     
+
+      // var loginjsonData = null;
+      // var loginresponse = await http.get("https://testing.timestint.com/tsapi/v1/company/", headers: <String, String>{'authorization': tokenData});
+      // // print(loginresponse.statusCode);
+    
+      // var loginstringData = loginresponse.body;
+      // // print(loginstringData);
+
+      // loginjsonData = json.decode(loginresponse.body);
+      // var list_comp = loginjsonData['results'];
+
+      // for (int i=0;i< list_comp.length;i++) {
+      //   print(list_comp[i]['name']);
+
+      //   await storage.write(key: 'company' , value: list_comp[i]['name']);
+      //   // print("hello");
+      // }
+
       
-      // token = await storage.read(key: 'first_name');
-      // print(token);
-      // await storage.write(key: key, value: value);
-      // print(jsonData);
       Navigator.push(  
         context,  
         MaterialPageRoute(builder: (context) => homePage()),  

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';  
 import 'dart:async';
 import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'login_screen.dart';
 import 'dashboard.dart';
 import 'screenshots.dart';
@@ -8,39 +9,49 @@ import 'project.dart';
 import 'profile.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class homePage extends StatefulWidget {
-  // var first;
-  // var mail;
-  // var Username;
-  // var mobileno;
+class homePage extends StatefulWidget {  
+
 
   @override
   State<StatefulWidget> createState() => new _State();
   // State<StatefulWidget> createState() => new _State(first,mail,Username,mobileno);
 }
 
-
 class _State extends State<homePage> {
   var first = "TimeStint";
   var mail = 'TimeStint';
   var Username = 'TimeStint';
   var mobileno = 'TimeStint';
+  var comp = "";
+  var new_token;
+  var token;
 
   String newValue;
   final storage = new FlutterSecureStorage();
- // var EmailData;
 
- // _State(this.first, this.mail, this.Username, this.mobileno);
-
+  var list_comp = [];
+ 
   @override
+  // var tokenData = "Token " + jsonData['data']['token'];
+  //   print(tokenData);
+
   void initState() {
+    
     this.getData();
     this.getMail();
+    this.getComp();
     print("Home page");
     super.initState();
   }
 
-  Future<String> getData() async{
+  Future<void> getData() async{
+    token = await storage.read(key: 'token');
+    setState(() {
+      print(token);
+      new_token = "Token " + token; 
+      });
+    // print(token);
+
     first = await storage.read(key: 'first_name');
     // print(first);
 
@@ -58,6 +69,25 @@ class _State extends State<homePage> {
     mail = await storage.read(key: 'email');
     print(mail);
   }
+
+  Future<void> getComp() async{
+    print(new_token); 
+    var loginjsonData = null;
+    var loginresponse = await http.get("https://testing.timestint.com/tsapi/v1/company/", headers: <String, String>{'authorization': token});
+    print(loginresponse.statusCode);
+    print("company_name");
+    var loginstringData = loginresponse.body;
+    print(loginstringData);
+
+    loginjsonData = json.decode(loginresponse.body);
+    var list_comp = loginjsonData['results'];
+
+    for (int i=0;i< list_comp.length;i++) {
+      print(list_comp[i]['name']);
+    }
+  }
+
+  // list_comp.append(comp);
 
   @override  
   Widget build(BuildContext context) {  
