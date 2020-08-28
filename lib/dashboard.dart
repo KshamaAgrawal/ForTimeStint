@@ -44,7 +44,7 @@ class _State extends State<dashboardPage> {
   
   @override  
   Widget build(BuildContext context) {  
-    return Scaffold(
+    return new Scaffold(
       appBar: AppBar(
         iconTheme: new IconThemeData(color: Colors.blue),
         backgroundColor: Colors.transparent,
@@ -260,7 +260,7 @@ class _State extends State<dashboardPage> {
           ],
         ),
       ]),
-      drawer: Drawer(
+      drawer: new Drawer(
         child: ListView( 
           children: <Widget>[
           // Row(

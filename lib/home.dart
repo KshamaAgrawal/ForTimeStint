@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';  
 import 'dart:async';
+import 'dart:convert';
 import 'login_screen.dart';
 import 'dashboard.dart';
 import 'screenshots.dart';
 import 'project.dart';
 import 'profile.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'dart:convert';
 
 class homePage extends StatefulWidget {
   // var first;
@@ -35,6 +35,8 @@ class _State extends State<homePage> {
   @override
   void initState() {
     this.getData();
+    this.getMail();
+    print("Home page");
     super.initState();
   }
 
@@ -52,9 +54,14 @@ class _State extends State<homePage> {
     print(mobileno);
   }
 
+  Future<String> getMail() async{
+    mail = await storage.read(key: 'email');
+    print(mail);
+  }
+
   @override  
   Widget build(BuildContext context) {  
-    return Scaffold(
+    return new Scaffold(
       appBar: AppBar(
         iconTheme: new IconThemeData(color: Colors.blue),
         backgroundColor: Colors.transparent,
@@ -327,8 +334,8 @@ class _State extends State<homePage> {
         ),
       ],
     ),
-      drawer: Drawer(
-        child: ListView( 
+      drawer: new Drawer(
+        child: new ListView( 
           children: <Widget>[
           // Row(
           //   children: [
