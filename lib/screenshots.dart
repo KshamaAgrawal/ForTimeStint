@@ -128,11 +128,11 @@ class _State extends State<screenshotPage> {
                     children: [
                       Container(
                         child: LinearPercentIndicator(
-                         width: 140.0,
-                         lineHeight: 8.0,
-                         percent: 0.5,
-                         backgroundColor: Colors.grey,
-                         progressColor: Colors.yellow,
+                          width: 140.0,
+                          lineHeight: 8.0,
+                          percent: 0.5,
+                          backgroundColor: Colors.grey,
+                          progressColor: Colors.yellow,
                         ),
                       ),
                     ]
@@ -153,17 +153,16 @@ class _State extends State<screenshotPage> {
                     children: [
                       Container(
                         child: LinearPercentIndicator(
-                         width: 140.0,
-                         lineHeight: 8.0,
-                         percent: 0.5,
-                         backgroundColor: Colors.grey,
-                         progressColor: Colors.blue,
+                          width: 140.0,
+                          lineHeight: 8.0,
+                          percent: 0.5,
+                          backgroundColor: Colors.grey,
+                          progressColor: Colors.yellow,
                         ),
                       ),
                     ]
                   ),
-                ],
-              ),
+                ]),
               ),
             ),
             Container(
@@ -228,11 +227,11 @@ class _State extends State<screenshotPage> {
                     children: [
                       Container(
                         child: LinearPercentIndicator(
-                         width: 140.0,
-                         lineHeight: 8.0,
-                         percent: 0.5,
-                         backgroundColor: Colors.grey,
-                         progressColor: Colors.yellow,
+                          width: 140.0,
+                          lineHeight: 8.0,
+                          percent: 0.5,
+                          backgroundColor: Colors.grey,
+                          progressColor: Colors.yellow,
                         ),
                       ),
                     ]
@@ -253,17 +252,16 @@ class _State extends State<screenshotPage> {
                     children: [
                       Container(
                         child: LinearPercentIndicator(
-                         width: 140.0,
-                         lineHeight: 8.0,
-                         percent: 0.5,
-                         backgroundColor: Colors.grey,
-                         progressColor: Colors.blue,
+                          width: 140.0,
+                          lineHeight: 8.0,
+                          percent: 0.5,
+                          backgroundColor: Colors.grey,
+                          progressColor: Colors.blue,
                         ),
                       ),
                     ]
                   ),
-                ],
-              ),
+                ]),
               ),
             ),
           ]
@@ -357,17 +355,16 @@ class _State extends State<screenshotPage> {
                     children: [
                       Container(
                         child: LinearPercentIndicator(
-                         width: 140.0,
-                         lineHeight: 8.0,
-                         percent: 0.5,
-                         backgroundColor: Colors.grey,
-                         progressColor: Colors.blue,
+                          width: 140.0,
+                          lineHeight: 8.0,
+                          percent: 0.5,
+                          backgroundColor: Colors.grey,
+                          progressColor: Colors.blue,
                         ),
                       ),
                     ]
                   ),
-                ],
-              ),
+                ]),
               ),
             ),
             Container(
@@ -432,11 +429,11 @@ class _State extends State<screenshotPage> {
                     children: [
                       Container(
                         child: LinearPercentIndicator(
-                         width: 140.0,
-                         lineHeight: 8.0,
-                         percent: 0.5,
-                         backgroundColor: Colors.grey,
-                         progressColor: Colors.yellow,
+                          width: 140.0,
+                          lineHeight: 8.0,
+                          percent: 0.5,
+                          backgroundColor: Colors.grey,
+                          progressColor: Colors.yellow,
                         ),
                       ),
                     ]
@@ -466,8 +463,7 @@ class _State extends State<screenshotPage> {
                       ),
                     ]
                   ),
-                ],
-              ),
+                ]),
               ),
             ),
           ]
@@ -528,7 +524,7 @@ class _State extends State<screenshotPage> {
             ),
             ListTile(  
               title: Text('Dashboard', style: TextStyle(color: Colors.black, fontSize: 15),),
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
               // color: Colors.blue,  
               onTap: () {  
                 Navigator.push(  
@@ -539,7 +535,7 @@ class _State extends State<screenshotPage> {
             ),
             ListTile(  
               title: Text('Report', style: TextStyle(color: Colors.black, fontSize: 15),),  
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
               onTap: () {  
               //   Navigator.push(  
               //     context,  
@@ -549,7 +545,7 @@ class _State extends State<screenshotPage> {
             ),
               ListTile(  
               title: Text('Timesheets', style: TextStyle(color: Colors.black, fontSize: 15),), 
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
               onTap: () {  
               //   Navigator.push(  
               //     context,  
@@ -559,7 +555,7 @@ class _State extends State<screenshotPage> {
             ),
             ListTile(  
               title: Text('Screenshots', style: TextStyle(color: Colors.black, fontSize: 15),), 
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
               onTap: () {  
                 Navigator.push(  
                   context,  

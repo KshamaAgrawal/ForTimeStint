@@ -10,11 +10,8 @@ import 'profile.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class homePage extends StatefulWidget {  
-
-
   @override
   State<StatefulWidget> createState() => new _State();
-  // State<StatefulWidget> createState() => new _State(first,mail,Username,mobileno);
 }
 
 class _State extends State<homePage> {
@@ -22,72 +19,57 @@ class _State extends State<homePage> {
   var mail = 'TimeStint';
   var Username = 'TimeStint';
   var mobileno = 'TimeStint';
-  var comp = "";
-  var new_token;
   var token;
-
+  List companies = [];
   String newValue;
   final storage = new FlutterSecureStorage();
+  // int _value = 1;
 
-  var list_comp = [];
- 
   @override
-  // var tokenData = "Token " + jsonData['data']['token'];
-  //   print(tokenData);
 
   void initState() {
-    
-    this.getData();
-    this.getMail();
-    this.getComp();
-    print("Home page");
     super.initState();
+    getData();
   }
 
-  Future<void> getData() async{
-    token = await storage.read(key: 'token');
+  Future<String> getData() async{
+    token = "Token "+await storage.read(key: 'token');
     setState(() {
-      print(token);
-      new_token = "Token " + token; 
-      });
-    // print(token);
-
-    first = await storage.read(key: 'first_name');
-    // print(first);
-
+      token;
+    });
+    
+    first = await storage.read(key: 'first_name');    
     mail = await storage.read(key: 'email');
-    // print(mail);
-
     Username = await storage.read(key: 'username');
-    print(Username);
-
     mobileno = await storage.read(key: 'mobile');
-    print(mobileno);
-  }
-
-  Future<String> getMail() async{
-    mail = await storage.read(key: 'email');
-    print(mail);
-  }
-
-  Future<void> getComp() async{
-    print(new_token); 
+    
     var loginjsonData = null;
-    var loginresponse = await http.get("https://testing.timestint.com/tsapi/v1/company/", headers: <String, String>{'authorization': token});
+
+    var loginresponse = await http.get("https://testing.timestint.com/tsapi/v1/company/", headers: <String, String>{'authorization':token});
     print(loginresponse.statusCode);
-    print("company_name");
-    var loginstringData = loginresponse.body;
+
+    var loginstringData = (loginresponse.body);
     print(loginstringData);
 
     loginjsonData = json.decode(loginresponse.body);
+    print(loginjsonData);
     var list_comp = loginjsonData['results'];
 
     for (int i=0;i< list_comp.length;i++) {
       print(list_comp[i]['name']);
+      companies.add(list_comp[i]['name']);
+      // setState(() {
+      //   companies;
+      // });
     }
+    getMail();  
   }
 
-  // list_comp.append(comp);
+  Future<String> getMail() {
+    print(mail);
+    print(mobileno);
+    print(Username);
+  }
 
   @override  
   Widget build(BuildContext context) {  
@@ -231,8 +213,36 @@ class _State extends State<homePage> {
               padding: EdgeInsets.fromLTRB(65,0, 0, 0),
               child: DropdownButton(
                 isExpanded: true,
-                
-                onChanged: (String changedValue) {
+                // value: _value,
+                // for (int i=0;i< list_comp.length;i++) {
+                //   print(list_comp[i]['name']);
+                // }
+              //   items: [
+              //     DropdownMenuItem(
+              //       child: Text("$companies",style: new TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),),
+              //       value: 1,
+              //     ),
+              //     // DropdownMenuItem(
+              //     //   child: Text("Second Item"),
+              //     //   value: 2,
+              //     // ),
+              //     // DropdownMenuItem(
+              //     //   child: Text("Third Item"),
+              //     //   value: 3
+              //     // ),
+              //     // DropdownMenuItem(
+              //     //     child: Text("Fourth Item"),
+              //     //     value: 4
+              //     // )
+              //   ],
+              //   onChanged: (value) {
+              //     setState(() {
+              //       _value = value;
+              //     });
+              //   }
+              // ),
+
+                onChanged: (dynamic changedValue) {
                   newValue=changedValue;
                   setState(() {
                     newValue;
@@ -245,13 +255,15 @@ class _State extends State<homePage> {
                   fontSize: 20,
                   fontWeight: FontWeight.bold
                 ),
-                items: <String>['Segno Tech', 'Security Troops']
-                  .map((String value) {
-                return new DropdownMenuItem<String>(
+                items: companies
+                // items: companies
+                  .map((dynamic value) {
+                return new DropdownMenuItem<dynamic>(
                   value: value,
                   child: new Text(value),
                 );
-              }).toList()),
+                }).toList()
+              ),
             ),
           ],
         ),
@@ -364,113 +376,113 @@ class _State extends State<homePage> {
         ),
       ],
     ),
-      drawer: new Drawer(
-        child: new ListView( 
-          children: <Widget>[
-          // Row(
-          //   children: [
-          //   new UserAccountsDrawerHeader( 
-          //     currentAccountPicture: new GestureDetector(
-          //       child: new CircleAvatar(
-          //         // backgroundColor: Colors.white,
-          //         backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
-          //       ),
-          //     ),
-          //     // decoration: BoxDecoration(
-          //     //   color: Colors.white,
-          //     // ),
-          //     accountName: new Text("Tom Curise", style: TextStyle(color: Colors.black),),
-          //     accountEmail: new Text("Senior Developer", style: TextStyle(color: Colors.blue),),
-          //     // currentAccountPicture: new GestureDetector(
-          //     //   child: new CircleAvatar(
-          //     //     // backgroundColor: Colors.white,
-          //     //     backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
-          //     //   ),
-          //     // ),
-          //   ),
-          //   ],
-          // ),
-            new UserAccountsDrawerHeader( 
-              currentAccountPicture: new GestureDetector(
-                  onTap: () =>  Navigator.push(  
-                    context,  
-                    MaterialPageRoute(builder: (context) => profilePage()),  
-                  ) ,
-                child: new CircleAvatar(
-                  backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
-                ),
+    drawer: new Drawer(
+      child: new ListView( 
+        children: <Widget>[
+        // Row(
+        //   children: [
+        //   new UserAccountsDrawerHeader( 
+        //     currentAccountPicture: new GestureDetector(
+        //       child: new CircleAvatar(
+        //         // backgroundColor: Colors.white,
+        //         backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
+        //       ),
+        //     ),
+        //     // decoration: BoxDecoration(
+        //     //   color: Colors.white,
+        //     // ),
+        //     accountName: new Text("Tom Curise", style: TextStyle(color: Colors.black),),
+        //     accountEmail: new Text("Senior Developer", style: TextStyle(color: Colors.blue),),
+        //     // currentAccountPicture: new GestureDetector(
+        //     //   child: new CircleAvatar(
+        //     //     // backgroundColor: Colors.white,
+        //     //     backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
+        //     //   ),
+        //     // ),
+        //   ),
+        //   ],
+        // ),
+          new UserAccountsDrawerHeader( 
+            currentAccountPicture: new GestureDetector(
+              onTap: () =>  Navigator.push(  
+                context,  
+                MaterialPageRoute(builder: (context) => profilePage()),  
+              ) ,
+              child: new CircleAvatar(
+                backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
               ),
-              decoration: BoxDecoration(
-                color: Colors.white,
-              ),
-              accountName: new Text(first, style: TextStyle(color: Colors.black),),
-              accountEmail: new Text(mail, style: TextStyle(color: Colors.blue),),
             ),
-            ListTile(  
-              title: Text('Timer', style: TextStyle(color: Colors.black, fontSize: 15),),
-              contentPadding: EdgeInsets.symmetric(horizontal: 35.0),  
-              onTap: () {  
-                Navigator.push(  
-                  context,  
-                  MaterialPageRoute(builder: (context) => homePage()),  
-                );  
-              },  
+            decoration: BoxDecoration(
+              color: Colors.white,
             ),
-            ListTile(  
-              title: Text('Dashboard', style: TextStyle(color: Colors.black, fontSize: 15),),
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
-              // color: Colors.blue,  
-              onTap: () {  
-                Navigator.push(  
-                  context,  
-                  MaterialPageRoute(builder: (context) => dashboardPage()),  
-                );  
-              },  
-            ),
-            ListTile(  
-              title: Text('Report', style: TextStyle(color: Colors.black, fontSize: 15),),  
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
-              onTap: () {  
-              //   Navigator.push(  
-              //     context,  
-              //     MaterialPageRoute(builder: (context) => page1Page()),  
-              //   );  
-              },  
-            ),
-              ListTile(  
-              title: Text('Timesheets', style: TextStyle(color: Colors.black, fontSize: 15),), 
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
-              onTap: () {  
-              //   Navigator.push(  
-              //     context,  
-              //     MaterialPageRoute(builder: (context) => page1Page()),  
-              //   );  
-              },  
-            ),
-            ListTile(  
-              title: Text('Screenshots', style: TextStyle(color: Colors.black, fontSize: 15),), 
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
-              onTap: () {  
-                Navigator.push(  
-                  context,  
-                  MaterialPageRoute(builder: (context) => screenshotPage()),  
-                );  
-              },  
-            ),            
-            new Divider(), 
-            ListTile(  
-              leading: Icon(Icons.power_settings_new, color: Colors.black),
-              title: Text('Logout', style: TextStyle(color: Colors.black, fontSize: 20),),
-              onTap: () {  
-                Navigator.push(  
-                  context,  
-                  MaterialPageRoute(builder: (context) => LoginPage()),  
-                );  
-              },  
-            ), 
-          ],  
-        ),  
-      ),
+            accountName: new Text(first, style: TextStyle(color: Colors.black),),
+            accountEmail: new Text(mail, style: TextStyle(color: Colors.blue),),
+          ),
+          ListTile(  
+            title: Text('Timer', style: TextStyle(color: Colors.black, fontSize: 15),),
+            contentPadding: EdgeInsets.symmetric(horizontal: 35.0),  
+            onTap: () {  
+              Navigator.push(  
+                context,  
+                MaterialPageRoute(builder: (context) => homePage()),  
+              );  
+            },  
+          ),
+          ListTile(  
+            title: Text('Dashboard', style: TextStyle(color: Colors.black, fontSize: 15),),
+             contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+            // color: Colors.blue,  
+            onTap: () {  
+              Navigator.push(  
+                context,  
+                MaterialPageRoute(builder: (context) => dashboardPage()),  
+              );  
+            },  
+          ),
+          ListTile(  
+            title: Text('Report', style: TextStyle(color: Colors.black, fontSize: 15),),  
+             contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+            onTap: () {  
+            //   Navigator.push(  
+            //     context,  
+            //     MaterialPageRoute(builder: (context) => page1Page()),  
+            //   );  
+            },  
+          ),
+          ListTile(  
+            title: Text('Timesheets', style: TextStyle(color: Colors.black, fontSize: 15),), 
+            contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+            onTap: () {  
+            //   Navigator.push(  
+            //     context,  
+            //     MaterialPageRoute(builder: (context) => page1Page()),  
+            //   );  
+            },  
+          ),
+          ListTile(  
+            title: Text('Screenshots', style: TextStyle(color: Colors.black, fontSize: 15),), 
+            contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+            onTap: () {  
+              Navigator.push(  
+                context,  
+                MaterialPageRoute(builder: (context) => screenshotPage()),  
+              );  
+            },  
+          ),            
+          new Divider(), 
+          ListTile(  
+            leading: Icon(Icons.power_settings_new, color: Colors.black),
+            title: Text('Logout', style: TextStyle(color: Colors.black, fontSize: 20),),
+            onTap: () {  
+              Navigator.push(  
+                context,  
+                MaterialPageRoute(builder: (context) => LoginPage()),  
+              );  
+            },  
+          ), 
+        ],  
+      ),  
+    ),
     );
   }
 }

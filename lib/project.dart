@@ -115,8 +115,7 @@ class _State extends State<projectPage>{
             ),
             Container(
               padding: EdgeInsets.fromLTRB(10,0,0,0),
-              height: 50,
-              
+              height: 50,              
               child: Card(
                 color: Colors.grey[400],
                 elevation: 50,
@@ -137,14 +136,12 @@ class _State extends State<projectPage>{
                       ),
                     ],
                   ),
-                ],
-                ),
+                ]),
               ),
             ),
             Container(
               padding: EdgeInsets.fromLTRB(10,0,0,0),
-              height: 50,
-             
+              height: 50,             
               child: Card(
                 color: Colors.grey[400],
                 elevation: 50,
@@ -165,8 +162,7 @@ class _State extends State<projectPage>{
                       ),
                     ],
                   ),
-                ],
-                ),
+                ]),
               ),
             ),
           ],
@@ -182,13 +178,11 @@ class _State extends State<projectPage>{
                child: Text('Team', style: TextStyle(color: Colors.black, fontSize: 18),),
             ),
           ],
-        ),
-        
+        ),        
         Padding( 
           padding: EdgeInsets.fromLTRB(0,0,20,0),
         ),
-        Divider( color: Colors.blue ),
-        
+        new Divider(color: Colors.blue),        
         Row(
           children: [
             Container(
@@ -276,8 +270,7 @@ class _State extends State<projectPage>{
           ],
         ),
         new Divider(color: Colors.grey),
-      ],
-      ),
+      ]),
     );
   }
 }

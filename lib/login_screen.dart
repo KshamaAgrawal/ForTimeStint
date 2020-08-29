@@ -20,7 +20,6 @@ class _State extends State<LoginPage> {
 
   login(String Username, String Password) async{
     var token = "";
-    print("function work");
     Map data = {
       'username': Username,
       'password': Password
@@ -34,23 +33,13 @@ class _State extends State<LoginPage> {
 
       jsonData = json.decode(response.body);
 
-      var tokenData = jsonData['data']['token'];
-      print(tokenData);
-
-      var idData = (jsonData['data']['id']);
-      print(idData.runtimeType);
-
+      var tokenData    = (jsonData['data']['token']);
+      var idData       = (jsonData['data']['id']);
       var UsernameData = (jsonData['data']['username']);
-      print(UsernameData);
-
-      var EmailData = (jsonData['data']['email']);
-      print(EmailData);
-
-      var mobileData = (jsonData['data']['mobile']);
-      print(mobileData.runtimeType);
-
+      var EmailData    = (jsonData['data']['email']);
+      var mobileData   = (jsonData['data']['mobile']);
+      // print(mobileData.runtimeType);
       var FNData = (jsonData['data']['first_name']);
-      print(FNData);
 
       print(jsonData['data']);
 
@@ -60,26 +49,7 @@ class _State extends State<LoginPage> {
       await storage.write(key: 'username'   , value: UsernameData);
       await storage.write(key: 'mobile'     , value: mobileData.toString());
       await storage.write(key: 'token'   , value: tokenData);
-     
-
-      // var loginjsonData = null;
-      // var loginresponse = await http.get("https://testing.timestint.com/tsapi/v1/company/", headers: <String, String>{'authorization': tokenData});
-      // // print(loginresponse.statusCode);
-    
-      // var loginstringData = loginresponse.body;
-      // // print(loginstringData);
-
-      // loginjsonData = json.decode(loginresponse.body);
-      // var list_comp = loginjsonData['results'];
-
-      // for (int i=0;i< list_comp.length;i++) {
-      //   print(list_comp[i]['name']);
-
-      //   await storage.write(key: 'company' , value: list_comp[i]['name']);
-      //   // print("hello");
-      // }
-
-      
+          
       Navigator.push(  
         context,  
         MaterialPageRoute(builder: (context) => homePage()),  
@@ -98,43 +68,14 @@ class _State extends State<LoginPage> {
       );
     }
   }
-  // Future<void> main() async
-  // Future<void> main() async {
-  //   Map<String, String> allValues = await storage.readAll();
-  // }
-
   Widget build(BuildContext context) {
-    // return FutureBuilder(
-    //   future: storage.ready,
-    //   builder: (BuildContext context, snapshot) {
-    //     if (snapshot.data == true) {
-    //       Map<String, dynamic> data = storage.getItem('key');
-
-    //       // return SomeDataView(data: data);
-    //     } 
-    //     // else {
-    //   //      AlertDialog alert = AlertDialog(  
-    //   //   title: Text("Simple Alert"),  
-    //   //   content: Text("Invalid Username and Password", style: TextStyle(color: Colors.red),),    
-    //   // ); 
-    //   // showDialog(  
-    //   //   context: context,  
-    //   //   builder: (BuildContext context) {  
-    //   //     return alert;  
-    //   //   },  
-    //   // );
-    //   //   }
-    //   },
-    // );
-    // Map<String, String> async {allValues = await storage.readAll(),};
     return Scaffold(
       body: Center(
         child: ListView(
           children: <Widget>[
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 35.0),),
-              Image.asset('assets/images/TS-long-logo-400.png',width: 50, height: 80),
-            
+            Image.asset('assets/images/TS-long-logo-400.png',width: 50, height: 80),            
             Container(
               padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 25.0),
             ),

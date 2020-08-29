@@ -9,7 +9,6 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'dart:convert';
 
 class dashboardPage extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() => new _State();
 }
@@ -25,21 +24,22 @@ class _State extends State<dashboardPage> {
   @override
   void initState() {
     super.initState();
-    this.getData();
+    getData();
   }
 
   Future<String> getData() async{
     first = await storage.read(key: 'first_name');
-    print(first);
-
     mail = await storage.read(key: 'email');
-    print(mail);
-
     Username = await storage.read(key: 'username');
-    print(Username);
-
     mobileno = await storage.read(key: 'mobile');
+    
+    getMail();  
+  }
+
+  Future<String> getMail() {
+    print(mail);
     print(mobileno);
+    print(Username);
   }
   
   @override  
@@ -111,85 +111,88 @@ class _State extends State<dashboardPage> {
         Row(
           children: <Widget>[
             Container(
-    		  padding: EdgeInsets.fromLTRB(10,0,0,0),
-            height: 100,
-            child: Card(
-            	color: Colors.blueAccent[400],
-            	elevation: 50,
-            	child: Column(children: <Widget>[
-                  Row(
-                    children: [
-                      Container(
-                        // padding: EdgeInsets.fromLTRB(5,40,50,20),
-                        padding: EdgeInsets.fromLTRB(0,50,50,0),
-                        child: Text('25', style: TextStyle(color: Colors.white, fontSize: 15),),
-                      ), 
-                    ]
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.fromLTRB(10,0,10,5),
-                        child: Text('Ongoing Tasks', style: TextStyle(color: Colors.white, fontSize: 10),),
-                      ), 
-                    ]
-                  ),
-                ]),
-            ),
-            ),
-            Container(
-    		  padding: EdgeInsets.fromLTRB(10,0,0,0),
-            height: 100,
-            child: Card(
-            	color: Colors.lightGreenAccent[700],
-            	elevation: 50,
-            	child: Column(children: <Widget>[
-                  Row(
-                    children: [
-                      Container(
-                        // padding: EdgeInsets.fromLTRB(5,40,50,20),
-                        padding: EdgeInsets.fromLTRB(0,50,50,0),
-                        child: Text('20', style: TextStyle(color: Colors.white, fontSize: 15),),
-                      ), 
-                    ]
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.fromLTRB(10,0,10,5),
-                        child: Text('Completed Tasks', style: TextStyle(color: Colors.white, fontSize: 10),),
-                      ), 
-                    ]
-                  ),
-                ]),
-            ),
+    		      padding: EdgeInsets.fromLTRB(10,0,0,0),
+              height: 100,
+              child: Card(
+              	color: Colors.blueAccent[400],
+              	elevation: 50,
+              	child: Column(children: <Widget>[
+                    Row(
+                      children: [
+                        Container(
+                          // padding: EdgeInsets.fromLTRB(5,40,50,20),
+                          padding: EdgeInsets.fromLTRB(0,50,50,0),
+                          child: Text('25', style: TextStyle(color: Colors.white, fontSize: 15),),
+                        ), 
+                      ]
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.fromLTRB(10,0,10,5),
+                          child: Text('Ongoing Tasks', style: TextStyle(color: Colors.white, fontSize: 10),),
+                        ), 
+                      ]
+                    ),
+                  ],
+                ),
+              ),
             ),
             Container(
-    		  padding: EdgeInsets.fromLTRB(10,0,0,0),
-            height: 100,
-            child: Card(
-            	color: Colors.pink,
-            	elevation: 50,
-            	child: Column(children: <Widget>[
-                  Row(
-                    children: [
-                      Container(
-                        // padding: EdgeInsets.fromLTRB(5,40,50,20),
-                        padding: EdgeInsets.fromLTRB(0,50,50,0),
-                        child: Text('4', style: TextStyle(color: Colors.white, fontSize: 15),),
-                      ), 
-                    ]
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.fromLTRB(10,0,10,5),
-                        child: Text('Overdue Tasks', style: TextStyle(color: Colors.white, fontSize: 10),),
-                      ), 
-                    ]
-                  ),
-                ]),
+      		    padding: EdgeInsets.fromLTRB(10,0,0,0),
+              height: 100,
+              child: Card(
+              	color: Colors.lightGreenAccent[700],
+              	elevation: 50,
+              	child: Column(children: <Widget>[
+                    Row(
+                      children: [
+                        Container(
+                          // padding: EdgeInsets.fromLTRB(5,40,50,20),
+                          padding: EdgeInsets.fromLTRB(0,50,50,0),
+                          child: Text('20', style: TextStyle(color: Colors.white, fontSize: 15),),
+                        ), 
+                      ]
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.fromLTRB(10,0,10,5),
+                          child: Text('Completed Tasks', style: TextStyle(color: Colors.white, fontSize: 10),),
+                        ), 
+                      ]
+                    ),
+                  ],
+                ),
+              ),
             ),
+            Container(
+      		    padding: EdgeInsets.fromLTRB(10,0,0,0),
+              height: 100,
+              child: Card(
+              	color: Colors.pink,
+              	elevation: 50,
+              	child: Column(children: <Widget>[
+                    Row(
+                      children: [
+                        Container(
+                          // padding: EdgeInsets.fromLTRB(5,40,50,20),
+                          padding: EdgeInsets.fromLTRB(0,50,50,0),
+                          child: Text('4', style: TextStyle(color: Colors.white, fontSize: 15),),
+                        ), 
+                      ]
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.fromLTRB(10,0,10,5),
+                          child: Text('Overdue Tasks', style: TextStyle(color: Colors.white, fontSize: 10),),
+                        ), 
+                      ]
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
@@ -212,32 +215,32 @@ class _State extends State<dashboardPage> {
             	child: new Row(
             		children: <Widget>[
                 	new CircularPercentIndicator(
-                      radius: 80.0,
-                      lineWidth: 6.0,
-                      percent: 0.80,
-                      center: new Text("80%", style: TextStyle(fontSize: 18),),
-                      progressColor: Colors.red,
-                    ),
-                    new Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
-                ),
-                new CircularPercentIndicator(
-                  radius: 80.0,
-                  lineWidth: 6.0,
-                  percent: 0.50,
-                  center: new Text("50%", style: TextStyle(fontSize: 18),),
-                  progressColor: Colors.cyan,
-                ),
-                new Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
-                ),
-                new CircularPercentIndicator(
-                  radius: 80.0,
-                  lineWidth: 6.0,
-                  percent: 0.20,
-                  center: new Text("20%", style: TextStyle(fontSize: 18),),
-                  progressColor: Colors.yellow,
-                )
+                    radius: 80.0,
+                    lineWidth: 6.0,
+                    percent: 0.80,
+                    center: new Text("80%", style: TextStyle(fontSize: 18),),
+                    progressColor: Colors.red,
+                  ),
+                  new Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  ),
+                  new CircularPercentIndicator(
+                    radius: 80.0,
+                    lineWidth: 6.0,
+                    percent: 0.50,
+                    center: new Text("50%", style: TextStyle(fontSize: 18),),
+                    progressColor: Colors.cyan,
+                  ),
+                  new Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  ),
+                  new CircularPercentIndicator(
+                    radius: 80.0,
+                    lineWidth: 6.0,
+                    percent: 0.20,
+                    center: new Text("20%", style: TextStyle(fontSize: 18),),
+                    progressColor: Colors.yellow,
+                  ),
                 ],
               ),
             ),
@@ -314,7 +317,7 @@ class _State extends State<dashboardPage> {
             ),
             ListTile(  
               title: Text('Dashboard', style: TextStyle(color: Colors.black, fontSize: 15),),
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
               // color: Colors.blue,  
               onTap: () {  
                 Navigator.push(  
@@ -325,7 +328,7 @@ class _State extends State<dashboardPage> {
             ),
             ListTile(  
               title: Text('Report', style: TextStyle(color: Colors.black, fontSize: 15),),  
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
               onTap: () {  
               //   Navigator.push(  
               //     context,  
@@ -333,9 +336,9 @@ class _State extends State<dashboardPage> {
               //   );  
               },  
             ),
-              ListTile(  
+            ListTile(  
               title: Text('Timesheets', style: TextStyle(color: Colors.black, fontSize: 15),), 
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
               onTap: () {  
               //   Navigator.push(  
               //     context,  
@@ -345,7 +348,7 @@ class _State extends State<dashboardPage> {
             ),
             ListTile(  
               title: Text('Screenshots', style: TextStyle(color: Colors.black, fontSize: 15),), 
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
               onTap: () {  
                 Navigator.push(  
                   context,  

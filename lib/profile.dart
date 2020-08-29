@@ -51,13 +51,13 @@ class _State extends State<profilePage>{
         elevation: 0.0,
         title: Text('Profile', style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),),
         actions: <Widget>[
-		    IconButton(
-		      icon: Icon(
-		        Icons.edit,
-		        color: Colors.black,
-		      ),
-		    ),
-		],
+  		    IconButton(
+  		      icon: Icon(
+  		        Icons.edit,
+  		        color: Colors.black,
+  		      ),
+  		    ),
+	      ],
       ),
       body: Column(children: <Widget>[
       	Row(
@@ -173,10 +173,10 @@ class _State extends State<profilePage>{
           // ),
             new UserAccountsDrawerHeader( 
               currentAccountPicture: new GestureDetector(
-                  onTap: () =>  Navigator.push(  
-                    context,  
-                    MaterialPageRoute(builder: (context) => profilePage()),  
-                  ) ,
+                onTap: () =>  Navigator.push(  
+                  context,  
+                  MaterialPageRoute(builder: (context) => profilePage()),  
+                ),
                 child: new CircleAvatar(
                   backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
                 ),
@@ -199,7 +199,7 @@ class _State extends State<profilePage>{
             ),
             ListTile(  
               title: Text('Dashboard', style: TextStyle(color: Colors.black, fontSize: 15),),
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
               // color: Colors.blue,  
               onTap: () {  
                 Navigator.push(  
@@ -210,7 +210,7 @@ class _State extends State<profilePage>{
             ),
             ListTile(  
               title: Text('Report', style: TextStyle(color: Colors.black, fontSize: 15),),  
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
               onTap: () {  
               //   Navigator.push(  
               //     context,  
@@ -220,7 +220,7 @@ class _State extends State<profilePage>{
             ),
               ListTile(  
               title: Text('Timesheets', style: TextStyle(color: Colors.black, fontSize: 15),), 
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
               onTap: () {  
               //   Navigator.push(  
               //     context,  
@@ -230,7 +230,7 @@ class _State extends State<profilePage>{
             ),
             ListTile(  
               title: Text('Screenshots', style: TextStyle(color: Colors.black, fontSize: 15),), 
-               contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 35.0),
               onTap: () {  
                 Navigator.push(  
                   context,  
@@ -255,42 +255,3 @@ class _State extends State<profilePage>{
   	);
   }
 }
-// class CustomPopupMenu {
-//   CustomPopupMenu({this.title, this.icon});
-//   String title;
-//   IconData icon;
-// }
-
-// class SelectedOption extends StatelessWidget {
-//   CustomPopupMenu choice;
-//   SelectedOption({Key key, this.choice}) : super(key: key);
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       child: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             Icon(choice.icon, size: 140.0, color: Colors.white),
-//             Text(
-//               choice.title,
-//               style: TextStyle(color: Colors.white, fontSize: 30),
-//             )
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-// class CustomPopupMenu {
-//   CustomPopupMenu({this.title, this.icon});
-//   String title;
-//   IconData icon;
-// }
-
-// void _select(CustomPopupMenu choice) {
-//     setState() {
-//       _selectedChoices = choice;
-//     };
-//   }
