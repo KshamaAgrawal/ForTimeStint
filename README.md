@@ -1,5 +1,8 @@
 # ForTimeStint
 
+## make your flutter folder:
+	flutter create myApp
+
 ## To see all details:
 	flutter doctor
 
